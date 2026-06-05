@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "targets",
+  "version": "${version}",
+  "name": "Targets",
+  "description": "ESP мод для отображения информации об игроках",
+  "authors": [
+    "f30719654-ship-it"
+  ],
+  "contact": {
+    "homepage": "https://github.com/f30719654-ship-it/Targets",
+    "sources": "https://github.com/f30719654-ship-it/Targets"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "ru.shipitteam.targets.TargetsMod"
+    ],
+    "client": [
+      "ru.shipitteam.targets.client.TargetsClientMod"
+    ]
+  },
+  "mixins": [
+    "targets.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.0",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
