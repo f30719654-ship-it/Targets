@@ -1,1 +1,37 @@
+name: Build & Test
 
+on:
+  push:
+    branches: [ main, develop, master ]
+  pull_request:
+    branches: [ main, develop, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: ['17', '21']
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK ${{ matrix.java-version }}
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: 'temurin'
+        cache: gradle
+    - name: Validate Gradle wrapper
+      uses: gradle/wrapper-validation-action@v1
+    - name: Build with Gradle
+      run: ./gradlew build
+    - name: Run tests
+      run: ./gradlew test
+    - name: Upload coverage
+      uses: codecov/codecov-action@v3
+    - name: Archive build artifacts
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts-java-${{ matrix.java-version }}
+        path: build/
+        retention-days: 5
