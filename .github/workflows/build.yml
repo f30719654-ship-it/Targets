@@ -14,8 +14,11 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
 
-      - name: Build Mod
-        run: gradle build
+      - name: Build Mod Jar
+        run: gradle jar
 
-      - name: Show generated files
-        run: find . -name "*.jar"
+      - name: Upload compiled jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: Targets-Mod-Jar
+          path: "**/build/libs/*.jar"
