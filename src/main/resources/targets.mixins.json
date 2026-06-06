@@ -2,12 +2,9 @@
   "required": true,
   "minVersion": "0.8",
   "package": "ru.shipitteam.targets.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "mixins": [
-  ],
-  "client": [
-    "GameRendererMixin"
-  ],
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   }
