@@ -17,8 +17,5 @@ jobs:
       - name: Build Mod
         run: gradle build
 
-      - name: Upload compiled jar
-        uses: actions/upload-artifact@v4
-        with:
-          name: Targets-Jar-File
-          path: build/libs/*.jar
+      - name: Show generated files
+        run: find . -name "*.jar"
