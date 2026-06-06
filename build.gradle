@@ -29,8 +29,6 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
     options.release = 17
-    // Отключаем строгую аннотацию миксинов, чтобы сборщик пропускал проверки классов игры
-    options.compilerArgs << "-Amixin.initialiseTargetVerify=false"
 }
 
 java {
