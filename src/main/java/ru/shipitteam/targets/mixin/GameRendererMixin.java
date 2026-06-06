@@ -1,9 +1,8 @@
 package ru.shipitteam.targets.mixin;
 
-import net.minecraft.client.renderer.GameRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(GameRenderer.class)
+@Mixin(targets = "net.minecraft.client.renderer.GameRenderer")
 public class GameRendererMixin {
-    // Пустой миксин, чтобы Fabric не выдавал ошибку при запуске
+    // Используем текстовый путь к цели, чтобы сборщик GitHub не ругался на отсутствие классов игры
 }
