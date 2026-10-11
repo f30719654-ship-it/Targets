@@ -1,27 +1,23 @@
 {
   "schemaVersion": 1,
   "id": "targets",
-  "version": "1.0.0",
-  "name": "Targets Mod",
-  "description": "Простой интерфейсный мод",
+  "version": "${version}",
+  "name": "Targets Neuro Aura",
+  "description": "Client-side PvP behavior recorder and analysis module.",
   "authors": [
     "ShipitTeam"
   ],
-  "contact": {},
   "license": "MIT",
-  "icon": "assets/targets/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
       "ru.shipitteam.targets.TargetsClient"
     ]
   },
-  "mixins": [
-    "targets.mixins.json"
-  ],
+  "mixins": [],
   "depends": {
-    "fabricloader": ">=0.15.0",
-    "minecraft": ">=1.20",
+    "fabricloader": ">=0.16.0",
+    "minecraft": ">=1.21.1",
     "java": ">=17"
   }
 }
